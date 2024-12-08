@@ -27,7 +27,7 @@
           "classnameTransform": "camelCaseOnly"
         }
       }
-    ],
+    ]
   },
-  "include": ["src"]
+  "include": ["src", "src/components", "src/typings/*.d.ts"]
 }
