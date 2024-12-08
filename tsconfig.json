@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "allowJs": false,
+    "isolatedModules": true,
+    "strict": true,
+    "noEmit": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "lib": ["ES2021.String", "dom"],
+    "types": ["jest"],
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "classnameTransform": "camelCaseOnly"
+        }
+      }
+    ],
+  },
+  "include": ["src"]
+}

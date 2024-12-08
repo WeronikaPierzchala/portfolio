@@ -1,10 +1,21 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
-export const useMediaQuery = (query) => {
+const breakpoints = {
+    xs: 480,
+    ss: 620,
+    sm: 768,
+    md: 1060,
+    lg: 1200,
+    xl: 1700, 
+} 
+
+type MediaQueryProps  = keyof typeof breakpoints;
+
+export const useMediaQuery = (query: MediaQueryProps) => {
     const [matches, setMatches] = useState(false);
 
     useEffect(() => {
-        const media = window.matchMedia(query);
+        const media = window.matchMedia(`(max-width: ${breakpoints[query]}px)`);
         if(media.matches !== matches) {
             setMatches(media.matches);
         }
