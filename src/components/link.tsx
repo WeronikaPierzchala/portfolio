@@ -1,22 +1,24 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { PageType } from "../const";
+import { capitalizeFirstLetter } from "../utils/string";
 
 export type LinkProps = {
-  page: string;
-  selectedPage: string;
-  setSelectedPage: (page: string) => void;
+  page: PageType;
+  selectedPage: PageType;
+  setSelectedPage: (page: PageType) => void;
 };
 
 export const Link = ({ page, selectedPage, setSelectedPage }: LinkProps) => {
-  const currentPage = page.toLowerCase();
+  const pageName = capitalizeFirstLetter(page);
   return (
     <AnchorLink
       className={`${
-        selectedPage === currentPage ? "text-yellow" : ""
+        selectedPage === page ? "text-yellow" : ""
       } hover:text-yellow transition duration-500`}
-      href={`#${currentPage}`}
-      onClick={() => setSelectedPage(currentPage)}
+      href={`#${page}`}
+      onClick={() => setSelectedPage(page)}
     >
-      {page}
+      {pageName}
     </AnchorLink>
   );
 };
