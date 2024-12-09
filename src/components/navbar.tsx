@@ -16,7 +16,7 @@ export const Navbar = ({
   setSelectedPage,
 }: NavbarProps) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
-  const isSmallScreen = useMediaQuery("sm");
+  const isSmallScreen = useMediaQuery("md");
 
   const shouldShowPopup = isSmallScreen && isMenuToggled;
 
