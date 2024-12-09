@@ -11,6 +11,7 @@ export const DotGroup = ({ selectedPage, setSelectedPage }: DotGroupProps) => {
     <div className="flex flex-col gap-6 fixed top-[60%] right-7">
       {Object.values(PAGES).map((page: PageType) => (
         <DotLink
+          key={page}
           page={page}
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
