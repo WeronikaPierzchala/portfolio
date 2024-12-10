@@ -5,11 +5,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "deep-blue": "#010026",
-        blue: "#2CBCE9",
-        red: "#DC4492",
+        primary: "#161515",
+        secondary: "#201d1e",
+        red: "#EB3656",
         yellow: "#FDCC49",
-        grey: "#ededed",
+        grey: "#e5e7eb",
+        blue: "#146EF5",
         "dark-grey": "#757575",
         "opaque-black": "rgba(0,0,0,0.35)",
       },
@@ -18,7 +19,7 @@ module.exports = {
           "linear-gradient(81.66deg, #00B5EE 7.21%, #FF45A4 45.05%, #FFBA00 78.07%)",
 
         "gradient-rainbow-blue":
-          "linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.36%, #FFBD0C 117.73%)",
+          "linear-gradient(90deg, rgba(253,204,73,1) 0%, rgba(235,54,86,1) 100%)",
       }),
       fontFamily: {
         playfair: ["Playfair Display", "serif"],
