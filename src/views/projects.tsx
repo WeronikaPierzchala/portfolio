@@ -12,7 +12,6 @@ const container = {
 };
 
 export const Projects = () => {
-  console.log(Array(7));
   return (
     <section id="projects" className="pt-48 pb-48">
       <motion.div
@@ -55,7 +54,7 @@ export const Projects = () => {
           >
             BEAUTIFUL USER INTERFACES
           </div>
-          {[1, 2, 3, 4, 5, 6, 7].map((_, index) => {
+          {[1].map((_, index) => {
             return <Project title="Project 1" key={index} />;
           })}
           <div
