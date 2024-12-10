@@ -3,3 +3,4 @@ export * from "./line-gradient";
 export * from "./link";
 export * from "./navbar";
 export * from "./social-media";
+export * from "./footer";
