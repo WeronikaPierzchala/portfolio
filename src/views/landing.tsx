@@ -13,7 +13,7 @@ export const Landing = ({ setSelectedPage }: LandingProps) => {
   const isTablet = useMediaQuery("md");
   const borderStyles = `relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 
           before:rounded-t-[400px] before:w-full before:max-w-[400px] before:h-full 
-          before:border-2 before:border-grey before:z-[-1] before:md:max-w-[500px]`;
+          before:border-2 before:border-secondary before:z-[-1] before:md:max-w-[500px]`;
 
   return (
     <section
@@ -64,7 +64,7 @@ export const Landing = ({ setSelectedPage }: LandingProps) => {
           }}
         >
           <AnchorLink
-            className="bg-white text-primary rounded-sm py-3 px-7 font-semibold hover:bg-yellow hover:text-white transition duration-500"
+            className="bg-white text-primary rounded-l-sm py-3 px-7 font-semibold hover:bg-yellow hover:text-white transition duration-500"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >

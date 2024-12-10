@@ -1,8 +1,10 @@
-import { LineGradient } from "../components";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import { Fragment, ReactElement } from "react";
 import skillsImg from "../assets/skills-image.png";
+import react from "../assets/react.png";
+import ts from "../assets/ts.png";
+import sass from "../assets/sass.png";
 
 export const Skills = () => {
   return (
@@ -22,10 +24,10 @@ export const Skills = () => {
           <p className="font-playfair font-semibold text-4xl mb-5">
             MY <span className="text-red">SKILLS</span>
           </p>
-          <LineGradient width="w-1/3" />
           <p className="mt-10 mb-7">
-            Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
-            fames odio in at.
+            These are the skills I use daily in my work, especially during
+            project development, to solve challenges, collaborate with my team,
+            and deliver successful outcomes
           </p>
         </motion.div>
 
@@ -39,31 +41,25 @@ export const Skills = () => {
       <div className="md:flex md:justify-between mt-16 gap-32">
         <AnimateSkill>
           <Skill
-            title="Asdasdasd"
-            description="  Urna, eget pulvinar dolor cursus volutpat dictum odio. Nec ultricies
-            amet in in neque nibh tortor. Libero sed pretium justo nulla blandit
-            nulla amet habitant iaculis. Iaculis in congue vitae sollicitudin
-            faucibus a"
+            src={react}
+            title="React"
+            description="Allows developers to create dynamic, fast, and scalable applications with reusable components. Its virtual DOM ensures efficient updates, making it ideal for high-performance apps. React’s extensive ecosystem, active community, and compatibility with modern tools make it a top choice for front-end development."
           />
         </AnimateSkill>
 
         <AnimateSkill delay={0.2}>
           <Skill
-            title="Asdasdasd"
-            description="  Urna, eget pulvinar dolor cursus volutpat dictum odio. Nec ultricies
-            amet in in neque nibh tortor. Libero sed pretium justo nulla blandit
-            nulla amet habitant iaculis. Iaculis in congue vitae sollicitudin
-            faucibus a"
+            src={ts}
+            title="Typescript"
+            description="Adds static typing, which enhances code quality and reduces runtime errors. It helps developers catch bugs early, improves code maintainability, and provides better tooling support with features like autocompletion and robust debugging. Ideal for large-scale applications, TypeScript ensures clearer, more reliable, and scalable code."
           />
         </AnimateSkill>
 
         <AnimateSkill delay={0.4}>
           <Skill
-            title="Asdasdasd"
-            description="  Urna, eget pulvinar dolor cursus volutpat dictum odio. Nec ultricies
-            amet in in neque nibh tortor. Libero sed pretium justo nulla blandit
-            nulla amet habitant iaculis. Iaculis in congue vitae sollicitudin
-            faucibus a"
+            src={sass}
+            title="SASS"
+            description="Simplifies writing stylesheets. It offers features like variables, nesting, mixins, and functions, making CSS more efficient and easier to maintain. Sass helps streamline workflows, reduce repetition, and create scalable, well-organized styles for complex projects."
           />
         </AnimateSkill>
       </div>
@@ -97,16 +93,21 @@ const AnimateSkill = ({ delay = 0, children }: AnimateSkillProps) => {
 type SkillProps = {
   title: string;
   description: string;
+  src: string;
 };
 
-const Skill = ({ title, description }: SkillProps) => {
+const Skill = ({ title, description, src }: SkillProps) => {
   return (
     <Fragment>
-      <div className="relative h-32">
+      <div className="relative">
         <div className="z-10">
           <p className="font-playfair font-semibold text-3xl mt-3">{title}</p>
         </div>
-        <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
+        <img
+          alt={title}
+          className="z-[-1] absolute top-[-40px] right-[-40px] brightness-50 opacity-50 max-w-[150px]"
+          src={src}
+        />
       </div>
       <p className="mt-5 pt-4">{description}</p>
     </Fragment>
@@ -121,7 +122,7 @@ const ImageWrapper = ({ children }: { children: ReactElement }) => {
   return (
     <div
       className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
-      before:w-full before:h-full before:border-2 before:border-blue before:z-[-1]"
+      before:w-full before:h-full before:border-2 before:border-secondary before:z-[-1]"
     >
       {children}
     </div>
