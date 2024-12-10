@@ -1,18 +1,24 @@
 import { useState, useEffect } from "react";
 import { useMediaQuery } from "./hooks";
-import { Navbar } from "./components/navbar";
-import { DotGroup } from "./components/dot-group";
+import { Navbar, DotGroup, LineGradient, Footer } from "./components";
+import { Landing, Skills, Projects, Contact } from "./views";
 import { PageType } from "./const";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<PageType>("home");
   const [isPageTop, setIsPageTop] = useState<boolean>(true);
-  const isTablet = useMediaQuery("md");
+  const isSmallScreen = useMediaQuery("md");
 
   useEffect(() => {
-    const checkIfPageTop = () => setIsPageTop(window.scrollY === 0);
-    document.addEventListener("scroll", checkIfPageTop);
-    return () => document.addEventListener("scroll", checkIfPageTop);
+    const manageScroll = () => {
+      setIsPageTop(window.scrollY < 20);
+      if (window.scrollY > 2631) return setSelectedPage("contact");
+      if (window.scrollY > 1791) return setSelectedPage("projects");
+      if (window.scrollY > 831) return setSelectedPage("skills");
+      return setSelectedPage("home");
+    };
+    document.addEventListener("scroll", manageScroll);
+    return () => document.addEventListener("scroll", manageScroll);
   }, []);
 
   return (
@@ -23,13 +29,27 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <div className="w-5/6 mx-auto md:h-full">
-        {!isTablet && (
+        {!isSmallScreen && (
           <DotGroup
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
           />
         )}
+        <Landing setSelectedPage={setSelectedPage} />
       </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <Skills />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <Projects />
+      </div>
+      <LineGradient />
+      <div className="w-5/6 mx-auto md:h-full">
+        <Contact />
+      </div>
+      <Footer />
     </div>
   );
 }
