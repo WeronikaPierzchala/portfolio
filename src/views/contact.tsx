@@ -1,4 +1,3 @@
-import { LineGradient } from "src/components";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import contact from "../assets/contact-image.jpeg";
@@ -16,43 +15,39 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact py-48">
+    <section
+      id="contact"
+      className="flex flex-col lg:flex-row items-center md:justify-between gap-16 py-48"
+    >
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5 }}
         variants={{
-          hidden: { opacity: 0, x: 50 },
-          visible: { opacity: 1, x: 0 },
+          hidden: { opacity: 0, y: 50 },
+          visible: { opacity: 1, y: 0 },
         }}
-        className="flex justify-end w-full"
+        className="flex justify-center"
       >
-        <div>
-          <p className="font-playfair font-semibold text-4xl">
-            <span className="text-yellow">CONTACT ME</span> TO GET STARTED
-          </p>
-          <div className="flex md:justify-end my-5">
-            <LineGradient width="w-1/2" />
-          </div>
-        </div>
+        <img src={contact} alt="contact" />
       </motion.div>
-
-      <div className="md:flex md:justify-between gap-16 mt-5">
+      <div className="max-w-[650px] flex flex-col justify-between">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, x: 50 },
+            visible: { opacity: 1, x: 0 },
           }}
-          className="basis-1/2 flex justify-center"
+          className="flex justify-end w-full"
         >
-          <img src={contact} alt="contact" />
+          <p className="font-playfair font-semibold text-4xl my-10">
+            <span className="text-yellow">CONTACT ME</span> TO GET STARTED
+          </p>
         </motion.div>
-
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -71,7 +66,7 @@ export const Contact = () => {
             method="POST"
           >
             <input
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3"
+              className="w-full bg-grey font-semibold text-primary placeholder-opaque-black p-3"
               type="text"
               placeholder="NAME"
               {...register("name", {
@@ -87,7 +82,7 @@ export const Contact = () => {
             )}
 
             <input
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
+              className="w-full bg-grey font-semibold text-primary placeholder-opaque-black p-3 mt-5"
               type="text"
               placeholder="EMAIL"
               {...register("email", {
@@ -103,7 +98,7 @@ export const Contact = () => {
             )}
 
             <textarea
-              className="w-full bg-blue font-semibold placeholder-opaque-black p-3 mt-5"
+              className="w-full bg-grey font-semibold text-primary placeholder-opaque-black p-3 mt-5"
               placeholder="MESSAGE"
               rows={4}
               cols={50}
@@ -122,7 +117,7 @@ export const Contact = () => {
             )}
 
             <button
-              className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
+              className="p-5 bg-yellow font-semibold text-primary mt-5 hover:bg-red hover:text-white transition duration-500"
               type="submit"
             >
               SEND ME A MESSAGE

@@ -33,7 +33,7 @@ export const Projects = () => {
 
       <div className="flex justify-center">
         <motion.div
-          className="sm:grid md:grid-cols-3 w-full"
+          className="sm:grid md:grid-cols-2 lg:grid-cols-3 w-full"
           variants={container}
           initial="hidden"
           whileInView="visible"

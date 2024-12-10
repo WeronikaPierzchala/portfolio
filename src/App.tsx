@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useMediaQuery } from "./hooks";
-import { Navbar, DotGroup, LineGradient, Footer } from "./components";
+import { Navbar, DotGroup, Footer } from "./components";
 import { Landing, Skills, Projects, Contact } from "./views";
 import { PageType } from "./const";
 
@@ -22,34 +22,25 @@ function App() {
   }, []);
 
   return (
-    <div className="app bg-deep-blue">
+    <div className="app bg-primary">
       <Navbar
-        backgroundColor={isPageTop ? "" : "bg-red"}
+        backgroundColor={isPageTop ? "" : "bg-secondary"}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
+      {!isSmallScreen && (
+        <DotGroup
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+      )}
       <div className="w-5/6 mx-auto md:h-full">
-        {!isSmallScreen && (
-          <DotGroup
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-          />
-        )}
         <Landing setSelectedPage={setSelectedPage} />
-      </div>
-      <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
         <Skills />
-      </div>
-      <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
         <Projects />
-      </div>
-      <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
         <Contact />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -38,7 +38,7 @@ export const Skills = () => {
         </div>
       </div>
 
-      <div className="md:flex md:justify-between mt-16 gap-32">
+      <div className="md:flex md:justify-between mt-24 gap-32">
         <AnimateSkill>
           <Skill
             src={react}
