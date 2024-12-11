@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import project1 from "../assets/project-1.jpeg";
 
 const container = {
   hidden: {},
