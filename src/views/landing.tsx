@@ -23,7 +23,10 @@ export const Landing = () => {
       id={PAGES.home}
       className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10 flex-row-reverse"
     >
-      <div className="flex justify-center basis-3/5 z-10 mt-16 md:mt-32">
+      <div
+        ref={ref}
+        className="flex justify-center basis-3/5 z-10 mt-16 md:mt-32"
+      >
         <div className={`${isTablet ? "" : borderStyles}`}>
           <img
             alt="profile"
@@ -44,10 +47,7 @@ export const Landing = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p
-            ref={ref}
-            className="text-6xl font-playfair z-10 text-center md:text-start"
-          >
+          <p className="text-6xl font-playfair z-10 text-center md:text-start">
             Weronika <span className="text-red">Pierzchała</span>
           </p>
           <p className="mt-10 mb-7 text-base text-center md:text-start">

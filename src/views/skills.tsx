@@ -14,7 +14,7 @@ export const Skills = () => {
 
   return (
     <section id={PAGES.skills} className="pt-20 pb-24">
-      <div className="md:flex md:justify-between md:gap-16 mt-32">
+      <div ref={ref} className="md:flex md:justify-between md:gap-16 mt-32">
         <motion.div
           className="md:w-1/3"
           initial="hidden"
@@ -26,7 +26,7 @@ export const Skills = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p ref={ref} className="font-playfair font-semibold text-4xl mb-5">
+          <p className="font-playfair font-semibold text-4xl mb-5">
             MY <span className="text-red">SKILLS</span>
           </p>
           <p className="mt-10 mb-7">

@@ -681,6 +681,10 @@ video {
   margin-left: 5rem;
 }
 
+.mr-4{
+  margin-right: 1rem;
+}
+
 .mt-1{
   margin-top: 0.25rem;
 }
@@ -830,8 +834,8 @@ video {
   gap: 1.75rem;
 }
 
-.gap-4{
-  gap: 1rem;
+.whitespace-nowrap{
+  white-space: nowrap;
 }
 
 .rounded-full{
@@ -1238,6 +1242,10 @@ body,
 
   .md\:h-full{
     height: 100%;
+  }
+
+  .md\:min-h-\[400px\]{
+    min-height: 400px;
   }
 
   .md\:w-1\/3{
