@@ -23,10 +23,7 @@ export const Landing = () => {
       id={PAGES.home}
       className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10 flex-row-reverse"
     >
-      <div
-        ref={ref}
-        className="flex justify-center basis-3/5 z-10 mt-16 md:mt-32"
-      >
+      <div className="flex justify-center basis-3/5 z-10 mt-16 md:mt-32">
         <div className={`${isTablet ? "" : borderStyles}`}>
           <img
             alt="profile"
@@ -36,7 +33,7 @@ export const Landing = () => {
           />
         </div>
       </div>
-      <div className="basis-2/5 mt-12 md:mt-32 z-30">
+      <div className="basis-2/5 mt-12 md:mt-32 z-30" ref={ref}>
         <motion.div
           initial="hidden"
           whileInView="visible"

@@ -14,8 +14,9 @@ export const Skills = () => {
 
   return (
     <section id={PAGES.skills} className="pt-20 pb-24">
-      <div ref={ref} className="md:flex md:justify-between md:gap-16 mt-32">
+      <div className="md:flex md:justify-between md:gap-16 mt-32">
         <motion.div
+          ref={ref}
           className="md:w-1/3"
           initial="hidden"
           whileInView="visible"
