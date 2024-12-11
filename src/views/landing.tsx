@@ -67,7 +67,7 @@ export const Landing = () => {
           }}
         >
           <AnchorLink
-            className="bg-white text-primary rounded-l-sm py-3 px-7 font-semibold hover:bg-yellow hover:text-white transition duration-500"
+            className="bg-white text-primary rounded-l-sm py-3 px-7 font-semibold hover:bg-yellow hover:text-white transition duration-500 whitespace-nowrap"
             onClick={gotToContactPage}
             href="#contact"
           >
@@ -78,7 +78,7 @@ export const Landing = () => {
             onClick={gotToContactPage}
             href="#contact"
           >
-            <div className="bg-primary hover:text-yellow transition duration-500 w-full h-full flex items-center font-playfair px-10">
+            <div className="bg-primary hover:text-yellow transition duration-500 w-full h-full flex items-center font-playfair px-10 whitespace-nowrap">
               Let's talk
             </div>
           </AnchorLink>
