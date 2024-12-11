@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const container = {
   hidden: {},
@@ -84,7 +84,7 @@ const Project = ({
   color,
 }: ProjectProps) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-100 transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-primary`;
+    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-primary min-h-fit`;
 
   return (
     <a href={link} target="_blank" rel="noreferrer">

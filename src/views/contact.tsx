@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import contact from "../assets/contact-image.jpeg";
 
 export const Contact = () => {

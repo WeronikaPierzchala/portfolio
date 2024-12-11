@@ -1,5 +1,5 @@
 import { useMediaQuery } from "../hooks/use-media-query";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Fragment, ReactElement } from "react";
 import skillsImg from "../assets/skills-image.png";
 import react from "../assets/react.png";
