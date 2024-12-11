@@ -1,4 +1,4 @@
-import { useMediaQuery } from "../hooks/useMediaQuery";
+import { useMediaQuery } from "../hooks/use-media-query";
 import { motion } from "framer-motion";
 import { Fragment, ReactElement } from "react";
 import skillsImg from "../assets/skills-image.png";
@@ -8,7 +8,7 @@ import sass from "../assets/sass.png";
 
 export const Skills = () => {
   return (
-    <section id="skills" className="pt-10 pb-24">
+    <section id="skills" className="pt-20 pb-24">
       <div className="md:flex md:justify-between md:gap-16 mt-32">
         <motion.div
           className="md:w-1/3"

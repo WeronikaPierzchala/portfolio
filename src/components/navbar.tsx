@@ -22,7 +22,7 @@ export const Navbar = ({
 
   return (
     <nav
-      className={`${backgroundColor} z-40 w-full fixed top-0 py-6 transition duration-150`}
+      className={`${backgroundColor} z-40 w-full fixed top-0 py-6 transition duration-75`}
     >
       <div className="flex items-center justify-between mx-auto w-5/6">
         <h4 className="font-playfair text-3xl font-bold">WP</h4>
