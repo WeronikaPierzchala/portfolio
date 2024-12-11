@@ -33,7 +33,7 @@ export const Landing = () => {
           />
         </div>
       </div>
-      <div className="basis-2/5 mt-12 md:mt-32 z-30" ref={ref}>
+      <div className="basis-2/5 mt-12 md:mt-32 z-30">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -44,7 +44,10 @@ export const Landing = () => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="text-6xl font-playfair z-10 text-center md:text-start">
+          <p
+            ref={ref}
+            className="text-6xl font-playfair z-10 text-center md:text-start"
+          >
             Weronika <span className="text-red">Pierzchała</span>
           </p>
           <p className="mt-10 mb-7 text-base text-center md:text-start">
