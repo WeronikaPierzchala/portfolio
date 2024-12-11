@@ -1,12 +1,10 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { PAGES, PageType } from "../const";
+import { usePageContext } from "../hooks";
 
-type DotGroupProps = {
-  selectedPage: PageType;
-  setSelectedPage: (page: PageType) => void;
-};
+export const DotGroup = () => {
+  const { selectedPage, setSelectedPage } = usePageContext();
 
-export const DotGroup = ({ selectedPage, setSelectedPage }: DotGroupProps) => {
   return (
     <div className="flex flex-col gap-6 fixed top-[60%] right-7">
       {Object.values(PAGES).map((page: PageType) => (

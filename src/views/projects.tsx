@@ -88,7 +88,7 @@ const Project = ({
   color,
 }: ProjectProps) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-100 transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-primary min-h-fit`;
+    bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-primary min-h-fit md:min-h-[400px]`;
 
   return (
     <a href={link} target="_blank" rel="noreferrer">

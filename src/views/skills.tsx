@@ -111,7 +111,7 @@ const Skill = ({ title, description, src }: SkillProps) => {
         </div>
         <img
           alt={title}
-          className="z-[-1] absolute top-[-40px] right-[-40px] brightness-50 opacity-50 max-w-[150px]"
+          className="z-[-1] absolute top-[-40px] right-[-40px] brightness-50 opacity-50 max-w-[150px] mr-4"
           src={src}
         />
       </div>
