@@ -1,26 +1,26 @@
-import { PageType } from "../const";
-import { useMediaQuery } from "src/hooks";
+import { PAGES } from "../const";
+import { useMediaQuery, usePageContext } from "src/hooks";
 import { motion } from "motion/react";
 import { SocialMediaIcons } from "../components/social-media";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import profile from "../assets/pic.png";
 import { useIsPageInView } from "../hooks/use-in-view";
 
-type LandingProps = {
-  setSelectedPage: (page: PageType) => void;
-};
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import profile from "../assets/pic.png";
 
-export const Landing = ({ setSelectedPage }: LandingProps) => {
-  const ref = useIsPageInView();
+export const Landing = () => {
+  const { setSelectedPage } = usePageContext();
+  const ref = useIsPageInView(PAGES.home);
   const isTablet = useMediaQuery("md");
 
   const borderStyles = `relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 
           before:rounded-t-[400px] before:w-full before:max-w-[400px] before:h-full 
           before:border-2 before:border-secondary before:z-[-1] before:md:max-w-[500px]`;
 
+  const gotToContactPage = () => setSelectedPage(PAGES.contact);
+
   return (
     <section
-      id="home"
+      id={PAGES.home}
       className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10 flex-row-reverse"
     >
       <div
@@ -71,14 +71,14 @@ export const Landing = ({ setSelectedPage }: LandingProps) => {
         >
           <AnchorLink
             className="bg-white text-primary rounded-l-sm py-3 px-7 font-semibold hover:bg-yellow hover:text-white transition duration-500"
-            onClick={() => setSelectedPage("contact")}
+            onClick={gotToContactPage}
             href="#contact"
           >
             Contact me
           </AnchorLink>
           <AnchorLink
             className="rounded-r-sm bg-white py-0.5 pr-0.5"
-            onClick={() => setSelectedPage("contact")}
+            onClick={gotToContactPage}
             href="#contact"
           >
             <div className="bg-primary hover:text-yellow transition duration-500 w-full h-full flex items-center font-playfair px-10">

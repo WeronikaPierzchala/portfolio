@@ -1,15 +1,20 @@
 import { useMediaQuery } from "../hooks/use-media-query";
 import { motion } from "motion/react";
 import { Fragment, ReactElement } from "react";
+import { useIsPageInView } from "../hooks/use-in-view";
+import { PAGES } from "../const";
+
 import skillsImg from "../assets/skills-image.png";
 import react from "../assets/react.png";
 import ts from "../assets/ts.png";
 import sass from "../assets/sass.png";
 
 export const Skills = () => {
+  const ref = useIsPageInView(PAGES.skills);
+
   return (
-    <section id="skills" className="pt-20 pb-24">
-      <div className="md:flex md:justify-between md:gap-16 mt-32">
+    <section id={PAGES.skills} className="pt-20 pb-24">
+      <div ref={ref} className="md:flex md:justify-between md:gap-16 mt-32">
         <motion.div
           className="md:w-1/3"
           initial="hidden"

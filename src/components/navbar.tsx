@@ -1,20 +1,17 @@
 import { useState } from "react";
-import { useMediaQuery } from "../hooks";
+import { useMediaQuery, usePageContext } from "../hooks";
 import { Link, LinkProps } from "./link";
 import { PAGES, PageType } from "../const";
 
 import menuIcon from "../assets/menu-icon.svg";
 import closeIcon from "../assets/close-icon.svg";
 
-type NavbarProps = Omit<LinkProps, "page"> & {
+type NavbarProps = {
   backgroundColor?: string;
 };
 
-export const Navbar = ({
-  backgroundColor,
-  selectedPage,
-  setSelectedPage,
-}: NavbarProps) => {
+export const Navbar = ({ backgroundColor }: NavbarProps) => {
+  const { selectedPage, setSelectedPage } = usePageContext();
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isSmallScreen = useMediaQuery("md");
 
